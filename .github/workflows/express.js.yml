@@ -1,4 +1,4 @@
-name: CI/CD Pipeline
+name: Express.js Sample App
 
 on:
   push:

@@ -12,8 +12,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
-    "build": "echo \"Works!\"",
-    "test": "node index.js"
+    "build": "mkdir -p dist && cp -r index.html main.css favicon.png public dist/"
   },
   "keywords": [],
   "author": "",

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>GamerTube</title>
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <header>
+      <span>GamerTube</span>
+      <img src="" alt="logo" />
+      <nav>
+        <ul>
+          <a><li></li></a>
+          <a><li></li></a>
+          <a><li>Account</li></a>
+        </ul>
+      </nav>
+      <b fname></b>
+      <img src="" alt="pfp" />
+    </header>
+    <main>
+      <sidebar>
+        <ul>
+          <a><li>Home</li></a>
+          <a><li>Trending</li></a>
+          <a><li></li></a>
+        </ul>
+      </sidebar>
+      <content>
+        <div id="featured" align="center">
+          <h1>Featured Videos</h1>
+          <table>
+            <tr></tr>
+          </table>
+        </div>
+        <div id="random" align="center">
+          <h1>Random Videos</h1>
+          <table>
+            <tr></tr>
+          </table>
+        </div>
+      </content>
+    </main>
+    <footer>
+      
+    </footer>
+    <script>
+      var LISTOFVIDEOS = [
+        // Video list here (commented out for brevity)
+      ]
+      var FEATUREDVIDEOS = [
+        // Featured video list here (commented out for brevity)
+      ]
+      var ammountOfVideos_1 = LISTOFVIDEOS.length - 1
+      const featuredElement = document.querySelector('#featured table tr')
+      const randomElement = document.querySelector('#random table tr')
+      var i = 0
+      let td;
+      let row;
+      let actionsI = 0
+      FEATUREDVIDEOS.forEach(video => {
+        if (video && typeof video === 'string') {
+          let [vid, rest] = video.split(' | ')
+          if (rest) {
+            let [channelInfo, vidInfo] = rest.split(' + ')
+            if (channelInfo) {
+              let [channelName, channelId] = channelInfo.split(' : ')
+              let vidId = vid.split('.')[0]
+              let vidExt = vid.split('.')[1]
+              td = document.createElement('td')
+              featuredElement.appendChild(td)
+              td.setAttribute('id', vidId)
+              td.innerHTML = `
+                <a href="/c/${channelId}/w?v=${vidId}&e=${vidExt}&u=${channelName}">
+                  <video src="/content/videos/${channelName}-${vidId}.${vidExt}"></video>
+                </a>
+              `
+              i++
+              actionsI++
+              console.log(`Video ${vidInfo || 'Unknown'}.${vidExt} uploaded to ${channelName} added to #featured`)
+            }
+          }
+        }
+      })
+      i = 0;
+      actionsI = 0;
+      var randomI = 0
+      randomI++
+      function actionS() {
+        return LISTOFVIDEOS[Math.floor((Math.random() * ammountOfVideos_1) + 1)]
+      }
+      video = actionS()
+      if (video && typeof video === 'string') {
+        let [vid, rest] = video.split(' | ')
+        if (rest) {
+          let [channelInfo, vidInfo] = rest.split(' + ')
+          if (channelInfo) {
+            let [channelName, channelId] = channelInfo.split(' : ')
+            let vidId = vid.split('.')[0]
+            let vidExt = vid.split('.')[1]
+            td = document.createElement('td')
+            randomElement.appendChild(td)
+            td.setAttribute('id', vidId)
+            td.innerHTML = `
+              <a href="/c/${channelId}/w?v=${vidId}&e=${vidExt}&u=${channelName}">
+                <video src="/content/videos/${channelName}-${vidId}.${vidExt}"></video>
+              </a>
+            `
+            i++
+            actionsI++
+            console.log(`Video ${vidInfo || 'Unknown'}.${vidExt} uploaded to ${channelName} added to #random`)
+          }
+        }
+      }
+    </script>
+    <script src="public/checker.js"></script>
+  </body>
+</html>

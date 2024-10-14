@@ -1,0 +1,11 @@
+{
+  "uname": "Admin", 
+  "passw": "Admin", 
+  "authorized_urls": [
+    "https://file-database.rockgamerak.repl.co", 
+    "https://videos.rockgamerak.repl.co", 
+    "https://videos.rockgamaerak.com", 
+    "https://gamertube.rockgamaerak.com", 
+    "https://rockgamertube.rockgamaerak.com"
+  ]
+}

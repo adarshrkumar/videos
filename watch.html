@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Watch | GamerTube</title>
+    <link rel="icon" href="/favicon.png" />
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body watchPage>
+    <header>
+      
+    </header>
+    <main>
+      <content>
+        <video controls autoplay watchPageVid style="display: none;" src="">
+          <section videoDetails>
+
+          </section>
+      </content>
+      <sidebar>
+        
+      </sidebar>
+    </main>
+    <script>
+      let videoElement = document.querySelector('[watchPageVid]')
+      let params = location.href.split('/w')[1].split('?')[1]
+      let vidId = params.split('v=')[1].split('&')[0]
+      var fileExt = params.split('e=')[1].split('&')[0]
+      var channelName = params.split('u=')[1]//.split('&')[0]
+      var channelId = location.href.split('/c/')[1].split('/w')[0]
+      let id = `${channelName}-${vidId}`
+      if (Boolean(fileExt) === false) {
+        var userExt = window.prompt("What's the file extention of the hosted file?")
+        if (userExt.startsWith('.') == true) {
+          userExt = userExt.split('.')[1]
+        }
+        location.href = `/c/${channelId}/w?v=${vidId}&e=${vidExt}&u=${channelName}`
+      }
+      else {
+        videoElement.setAttribute('src', `/content/videos/${id}.${fileExt}`)
+        videoElement.setAttribute('style', '')
+      }
+    </script>
+  </body>
+</html>

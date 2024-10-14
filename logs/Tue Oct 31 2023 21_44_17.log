@@ -1,0 +1,4 @@
+@<1698788813072>:[A user navigated to "/v1/metadata" and the file "/404.html" was displayed to the user.]
+@<1698788813163>:[A user navigated to "/.dockercfg" and the file "/404.html" was displayed to the user.]
+@<1698788813291>:[A user navigated to "/v1/tasks" and the file "/404.html" was displayed to the user.]
+@<1698788813342>:[A user navigated to "/.docker/config.json" and the file "/404.html" was displayed to the user.]

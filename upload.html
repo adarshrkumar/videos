@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Upload | GamerTube</title>
+  </head>
+  <body>
+  	<h1>GamerTube Upload a Vido</h1>
+  	<form action="/uploadFile?uname&passw"
+	enctype="multipart/form-data" method="POST">
+  		<label for="myfile">Upload File:</span>
+  		<input type="file" name="myfile" required accept="video/*" />
+      <p></p>
+  		<input type="submit" value="Submit">
+  	</form>
+    <script>
+      let uName = 'QWRtaW4='
+      let passW = 'QWRtaW4='
+      document.querySelector('form').setAttribute('action', `/uploadFile?uname=${uName}&passw=${passW}`)
+    </script>
+  </body>
+</html>

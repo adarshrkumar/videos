@@ -1,5 +1,5 @@
 {
-  "name": "RockGamerAK",
+  "name": "videos",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -12,7 +12,8 @@
   "devDependencies": {},
   "scripts": {
     "start": "node index.js",
-    "build": "mkdir -p dist && cp -r index.html main.css favicon.png public dist/"
+    "build": "echo: \"Works!\"",
+    "test": "node index.js"
   },
   "keywords": [],
   "author": "",

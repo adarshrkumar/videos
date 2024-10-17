@@ -5,11 +5,10 @@
   "main": "index.js",
   "dependencies": {
     "ejs": "^3.1.9",
-    "express": "^4.18.2",
+    "express": "^4.21.1",
     "multer": "^1.4.5-lts.1",
     "node": "^20.5.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "node index.js",
     "build": "mkdir -p dist && cp -r index.html main.css favicon.png public dist/"
